@@ -3,7 +3,7 @@
  * GRAPHDECO research group, https://team.inria.fr/graphdeco
  * All rights reserved.
  *
- * This software is free for non-commercial, research and evaluation use 
+ * This software is free for non-commercial, research and evaluation use
  * under the terms of the LICENSE.md file.
  *
  * For inquiries contact  george.drettakis@inria.fr
@@ -30,10 +30,11 @@ namespace BACKWARD
 		const float4* conic_opacity,
 		const float* colors,
 		const float* depths,
-		const float* final_Ts,
+		const float* alphas,
 		const uint32_t* n_contrib,
 		const float* dL_dpixels,
 		const float* dL_invdepths,
+		const float* dL_dalphas,
 		float3* dL_dmean2D,
 		float4* dL_dconic2D,
 		float* dL_dopacity,
@@ -58,10 +59,10 @@ namespace BACKWARD
 		const glm::vec3* campos,
 		const float3* dL_dmean2D,
 		const float* dL_dconics,
-		const float* dL_dinvdepth,
 		float* dL_dopacity,
 		glm::vec3* dL_dmeans,
 		float* dL_dcolor,
+		const float* dL_dinvdepth,
 		float* dL_dcov3D,
 		float* dL_dsh,
 		glm::vec3* dL_dscale,

@@ -3,7 +3,7 @@
  * GRAPHDECO research group, https://team.inria.fr/graphdeco
  * All rights reserved.
  *
- * This software is free for non-commercial, research and evaluation use 
+ * This software is free for non-commercial, research and evaluation use
  * under the terms of the LICENSE.md file.
  *
  * For inquiries contact  george.drettakis@inria.fr
@@ -49,7 +49,9 @@ namespace CudaRasterizer
 			const float tan_fovx, float tan_fovy,
 			const bool prefiltered,
 			float* out_color,
-			float* depth,
+			float* out_depth,
+			float* out_alpha,
+			int* is_used,
 			bool antialiasing,
 			int* radii = nullptr,
 			bool debug = false);
@@ -76,6 +78,7 @@ namespace CudaRasterizer
 			char* image_buffer,
 			const float* dL_dpix,
 			const float* dL_invdepths,
+			const float* dL_dopacities,
 			float* dL_dmean2D,
 			float* dL_dconic,
 			float* dL_dopacity,
